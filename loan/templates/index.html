@@ -1,0 +1,147 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application Form</title>
+    <link rel="stylesheet" href="{% static 'style-index.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Loan Application Form</h1>
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" value="RISHAV" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="sdfasd@sdfjalskdf.com" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" value="234234" required>
+            </div>
+            <div class="form-group">
+                <label for="whatsapp">Whatsapp No.:</label>
+                <input type="tel" id="whatsappno" name="whatsappno" value="3423423" required>
+            </div>
+            <div class="form-group">
+                <label for="aadhar">Aadhar No.:</label>
+                <input type="text" id="adhaarno" name="adhaarno" value="234234" required>
+            </div>
+            <div class="form-group">
+                <label for="pan">Pan No.:</label>
+                <input type="text" id="pan" name="pan" value="23423lkjl" required>
+            </div>
+            <div class="form-group">
+                <label for="bank_account">Bank Account Number:</label>
+                <input type="text" id="backacctno" name="bankacctno" value="42342sdf" required>
+            </div>
+            <div class="form-group">
+                <label for="bankName">Bank Name:</label>
+                <input type="text" id="bankName" name="bankName" value="asdfasdf" required>
+            </div>
+            <div class="form-group">
+                <label for="bankIFSC">Bank IFSC:</label>
+                <input type="text" id="bankIFSC" name="bankIFSC" value="sdfa2342" required>
+            </div>
+            <div class="form-group">
+                <label for="loanamt">Loan Amount:</label>
+                <input type="text" id="loanamt" name="loanamt" value="234234234" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" value="dsdfadf" required>
+            </div>
+            <div class="form-group">
+                <label for="pincode">Pin Code:</label>
+                <input type="text" id="pincode" name="pincode" value="23423" required>
+            </div>
+            <div class="form-group">
+                <label for="state">Select State:</label>
+                <select id="state" name="state"  required>
+                    <option class="placeholder" value="" selected="selected">Select State</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="West Bengal">West Bengal</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="loantype">Select Loan Type:</label>
+                <select id="loantype" name="loantype" value="Home" required>
+                    <option value="Personal Loan">Personal Loan</option>
+                    <option value="Home Loan">Home Loan</option>
+                    <option value="Business Loan">Business Loan</option>
+                    <option value="Education Loan">Education Loan</option>
+                    <option value="Property Loan">Property Loan</option>
+                    </select>
+            </div>
+            <div class="form-group">
+                <label for="itr">Select ITR:</label>
+                <select id="itr" name="itr"  value="FIled" required>
+                    <option value="">Select</option>
+                    <option value="Filed">Filed</option>
+                    <option value="Not Filed">Not Filed</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tenure">Select Tenure</label>
+                <select name="tenure" id="tenure" value="3 year">
+                    <option selected="selected" value="">Select Tenure</option>
+                    <option value="1">1 Year</option>
+                    <option value="2">2 Year</option>
+                    <option value="3">3 Year</option>
+                    <option value="4">4 Year</option>
+                    <option value="5">5 Year</option>
+                    <option value="6">6 Year</option>
+                    <option value="7">7 Year</option>
+                    <option value="8">8 Year</option>
+                    <option value="9">9 Year</option>
+                    <option value="10">10 Year</option>
+                    <option value="11">11 Year</option>
+                    <option value="12">12 Year</option>
+                    <option value="13">13 Year</option>
+                    <option value="14">14 Year</option>
+                    <option value="15">15 Year</option>
+                    <option value="16">16 Year</option>
+                    <option value="17">17 Year</option>
+                    <option value="18">18 Year</option>
+                    <option value="19">19 Year</option>
+                    <option value="20">20 Year</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="button">Submit Application</button>
+        </form>
+    </div>
+</body>
+</html>
+           

@@ -1,0 +1,43 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Your Application</title>
+    <link rel="stylesheet" href="{%static 'style-status.css'%}">
+</head>
+<body>
+    <div class="header">
+        <h1>Track Your Application</h1>
+
+        <form action="" method="POST">
+            <label for="phone">Enter your phone number</label>
+            <input id="phone" name="phone" type="text">
+            <button type="submit">Check Status</button>
+        </form>
+        
+
+    </div>
+    {% if profile %}
+        <div class="container">
+            
+            <div class="content">
+                <div class="applicant-info">
+                    <h2>Vikram Dhura</h2>
+                    <p>Chandigarh</p>
+                </div>
+                <div class="application-details">
+                    <p>Application Date: 22 march</p>
+                    <p>Status: Processing</p>
+                    <p>Loan Type: Business Loan</p>
+                    <p>Loan Amount: 10000</p>
+                    <p>Payment Amount 1: 500 Paid</p>
+                    <p>Payment Amount 2: 3000 Paid</p>
+                </div>
+            </div>
+        </div>
+    {%endif%}
+    
+</body>
+</html>

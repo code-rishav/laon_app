@@ -1,0 +1,30 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style-admin.css' %}">
+    <title>ADMIN Panel</title>
+</head>
+<body>
+    <h2>Responsive Column Cards</h2>
+<p>Resize the browser window to see the effect.</p>
+    {% if profiles %}
+        <div class="row">
+        {% for profile in profiles %}
+            <div class="column">
+                <a href="{% url 'profileupdate' profile.phone %}">
+                    <div class="card">
+                        <h3>{{profile.name}}</h3>
+                        <p>{{profile.status}}</p>
+                        <p>{{profile.city}}</p>                 
+                    </div>
+                </a>
+            </div>
+            
+        {%endfor %}
+        
+    {%endif%}
+</body>
+</html>

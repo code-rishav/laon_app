@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Details</title>
+    <style>
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Box styles */
+        .box {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .label {
+            display: inline-block;
+            width: 30%;
+            margin-right: 10px;
+        }
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        /* Close button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 600px) {
+            .label {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Loan Details</h1>
+
+    <!-- Table for application details -->
+    <h2>Application Details</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Name</td>
+                <td>John Doe</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>john@example.com</td>
+            </tr>
+            <tr>
+                <td>WhatsApp Number</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Adhaar Number</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Pincode</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>PAN NO.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Bank Account No.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Bank Name</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Bank IFSC</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Loan Amount</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Laon Type</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ITR</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Tenure</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Date Applied</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td></td>
+            </tr>
+            <!-- Add more rows for other application details -->
+        </tbody>
+    </table>
+
+    <div class="box">
+        <div class="label">Label 1:</div>
+        <div class="label">Label 2:</div>
+        <div class="label">Label 3:</div>
+    </div>
+
+    <!-- Table for payments made -->
+    <h2>Payments Made</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2022-04-01</td>
+                <td>$100</td>
+            </tr>
+            <tr>
+                <td>2022-04-15</td>
+                <td>$150</td>
+            </tr>
+            <!-- Add more rows for other payments made -->
+        </tbody>
+    </table>
+    <button onclick="openModal()">ADD LABEL</button>
+    <!-- Box with labels -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h3>Enter your information:</h3>
+          <form action="POST">
+              <label for="amount">Payment</label><br>
+              <input type="number" id="amount" name="amount"><br>
+              <label for="date">Date</label><br>
+              <input type="date" id="date" name="date"><br>
+              <!-- Add more form fields as needed -->
+              <br>
+              <button type="submit">Submit</button>
+          </form>
+        </div>
+      
+      </div>
+
+      <script>
+        // Get the modal
+        var modal = document.getElementById('myModal');
+        
+        // Get the button that opens the modal
+        var btn = document.getElementsByTagName("button")[0];
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks the button, open the modal
+        function openModal() {
+          modal.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        function closeModal() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
+</body>
+</html>
