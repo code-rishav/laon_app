@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application Details</title>
-    <style>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- <style>
         /* Table styles */
         table {
             width: 100%;
@@ -72,167 +74,206 @@
                 margin-bottom: 10px;
             }
         }
-    </style>
+    </style>  -->
 </head>
-<body>
-    <h1>Loan Details</h1>
-
+<body >
+    <div class=" flex items-center justify-center flex-col w-[100vw] min-h-[100vh] gap-5">
+        <header class=" bg-white border-b shadow-md h-20 md:h-16 w-full fixed top-0 p-2 flex items-center justify-center">
+            <a href="#"  class=" h-4/5 md:ml-2 md:flex-1">
+                <img class=" h-full"  src="data:image/jpeg;base64,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" alt=" logo">
+            </a>
+        </header>
+    <h1 class="  text-3xl text-center mt-24 font-semibold">Loan Details</h1>
     <!-- Table for application details -->
-    <h2>Application Details</h2>
-    <table>
-        <thead>
+    <h2 class=" text-2xl text-center text-gray-500 ">Application Details</h2>    
+    <table class=" border w-[80%] ">
+        <thead class=" h-12 border bg-zinc-300">
             <tr>
-                <th>Field</th>
-                <th>Value</th>
+                <th class=" text-left pl-10 ">Field</th>
+                <th class=" text-right pr-10">Value</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>Name</td>
-                <td>John Doe</td>
+        <tbody class=" w-full">
+            <tr class=" h-12 border-b hover:bg-zinc-200  ">
+                <td class=" text-left pl-10">Name</td>
+                <td class=" text-right pr-10">John Doe</td>
             </tr>
-            <tr>
-                <td>Email</td>
-                <td>john@example.com</td>
+            <tr class=" h-12 border-b bg-zinc-100  hover:bg-zinc-200 ">
+                <td class=" text-left pl-10">Email</td>
+                <td class=" text-right pr-10">john@example.com</td>
             </tr>
-            <tr>
-                <td>WhatsApp Number</td>
-                <td></td>
+            <tr class=" h-12 border-b  hover:bg-zinc-200 ">
+                <td class=" text-left pl-10">WhatsApp Number</td>
+                <td class=" text-right pr-10"></td>
             </tr>
-            <tr>
-                <td>Adhaar Number</td>
-                <td></td>
+            <tr class=" h-12 border-b bg-zinc-100  hover:bg-zinc-200 ">
+                <td class=" text-left pl-10">Adhaar Number</td>
+                <td class=" text-right pr-10"></td>
             </tr>
-            <tr>
-                <td>City</td>
-                <td></td>
+            <tr class=" h-12 border-b hover:bg-zinc-200 ">
+                <td class=" text-left pl-10">City</td>
+                <td class=" text-right pr-10"></td>
             </tr>
-            <tr>
-                <td>State</td>
-                <td></td>
+            <tr class=" h-12 border-b bg-zinc-100 hover:bg-zinc-200 ">
+                <td class=" text-left pl-10">State</td>
+                <td class=" text-right pr-10"></td>
             </tr>
-            <tr>
-                <td>Pincode</td>
-                <td></td>
+            <tr class=" h-12 border-b hover:bg-zinc-200 ">
+                <td class=" text-left pl-10">Pincode</td>
+                <td class=" text-right pr-10"></td>
             </tr>
-            <tr>
-                <td>PAN NO.</td>
-                <td></td>
+            <tr class=" h-12 border-b bg-zinc-100 hover:bg-zinc-200 ">
+                <td class=" text-left pl-10">PAN NO.</td>
+                <td class=" text-right pr-10"></td>
             </tr>
-            <tr>
-                <td>Bank Account No.</td>
-                <td></td>
+            <tr class=" h-12 border-b hover:bg-zinc-200 ">
+                <td class=" text-left pl-10">Bank Account No.</td>
+                <td class=" text-right pr-10"></td>
             </tr>
-            <tr>
-                <td>Bank Name</td>
-                <td></td>
+            <tr class=" h-12 border-b bg-zinc-100 hover:bg-zinc-200 ">
+                <td class=" text-left pl-10">Bank Name</td>
+                <td class=" text-right pr-10"></td>
             </tr>
-            <tr>
-                <td>Bank IFSC</td>
-                <td></td>
+            <tr class=" h-12 border-b hover:bg-zinc-200 ">
+                <td class=" text-left pl-10">Bank IFSC</td>
+                <td class=" text-right pr-10"></td>
             </tr>
-            <tr>
-                <td>Loan Amount</td>
-                <td></td>
+            <tr class=" h-12 border-b bg-zinc-100 hover:bg-zinc-200 ">
+                <td class=" text-left pl-10">Loan Amount</td>
+                <td class=" text-right pr-10"></td>
             </tr>
-            <tr>
-                <td>Laon Type</td>
-                <td></td>
+            <tr class=" h-12 border-b hover:bg-zinc-200 ">
+                <td class=" text-left pl-10">Laon Type</td>
+                <td class=" text-right pr-10"></td>
             </tr>
-            <tr>
-                <td>ITR</td>
-                <td></td>
+            <tr class=" h-12 border-b bg-zinc-100 hover:bg-zinc-200 ">
+                <td class=" text-left pl-10">ITR</td>
+                <td class=" text-right pr-10"></td>
             </tr>
-            <tr>
-                <td>Tenure</td>
-                <td></td>
+            <tr class=" h-12 border-b hover:bg-zinc-200 ">
+                <td class=" text-left pl-10">Tenure</td>
+                <td class=" text-right pr-10"></td>
             </tr>
-            <tr>
-                <td>Date Applied</td>
-                <td></td>
+            <tr class=" h-12 border-b bg-zinc-100  hover:bg-zinc-200 ">
+                <td class=" text-left pl-10">Date Applied</td>
+                <td class=" text-right pr-10"></td>
             </tr>
-            <tr>
-                <td>Status</td>
-                <td></td>
+            <tr class=" h-12 border-b hover:bg-zinc-200 ">
+                <td class=" text-left pl-10">Status</td>
+                <td class=" text-right pr-10"></td>
             </tr>
             <!-- Add more rows for other application details -->
         </tbody>
     </table>
 
-    <div class="box">
-        <div class="label">Label 1:</div>
-        <div class="label">Label 2:</div>
-        <div class="label">Label 3:</div>
+    <div class=" w-[90%] gap-4 md:w-[80%] md:flex-row flex-col flex justify-between items-center">
+        <div class="label">Label 1: <input type="text" name="" id="" class=" border outline-none py-1 px-2 rounded-xl ml-2"></div>
+        <div class="label">Label 2: <input type="text" name="" id="" class=" border outline-none py-1 px-2 rounded-xl ml-2"></div>
+        <div class="label">Label 3: <input type="text" name="" id="" class=" border outline-none py-1 px-2 rounded-xl ml-2"></div>
     </div>
 
     <!-- Table for payments made -->
-    <h2>Payments Made</h2>
-    <table>
-        <thead>
+    <h2 class=" text-2xl text-center mt-5 font-semibold">Payments Made</h2>
+    <table class=" w-[90%] border md:w-[50%]">
+        <thead class=" border h-8">
             <tr>
-                <th>Date</th>
-                <th>Amount</th>
+                <th class=" border-r text-left pl-4">Date</th>
+                <th class=" text-right pr-4">Amount</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>2022-04-01</td>
-                <td>$100</td>
+            <tr class=" h-8  hover:bg-zinc-100">
+                <td class="  border-r text-left pl-4">2022-04-01</td>
+                <td class=" text-right pr-4">$100</td>
             </tr>
-            <tr>
-                <td>2022-04-15</td>
-                <td>$150</td>
+            <tr  class=" h-8 hover:bg-zinc-100">
+                <td class="  border-r text-left pl-4">2022-04-15</td>
+                <td class=" text-right pr-4">$150</td>
+            </tr>
+            <tr class=" h-8  hover:bg-zinc-100">
+                <td class="  border-r text-left pl-4">2022-05-01</td>
+                <td class=" text-right pr-4">$200</td>
+            </tr>
+            <tr  class=" h-8 hover:bg-zinc-100">
+                <td class="  border-r text-left pl-4">2022-06-15</td>
+                <td class=" text-right pr-4">$50</td>
             </tr>
             <!-- Add more rows for other payments made -->
         </tbody>
     </table>
-    <button onclick="openModal()">ADD LABEL</button>
-    <!-- Box with labels -->
-    <div id="myModal" class="modal">
+   <!-- Modal toggle -->
+<button id="myBtn" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+    Add Label
+  </button>
 
-        <!-- Modal content -->
-        <div class="modal-content">
-          <span class="close" onclick="closeModal()">&times;</span>
-          <h3>Enter your information:</h3>
-          <form action="POST">
-              <label for="amount">Payment</label><br>
-              <input type="number" id="amount" name="amount"><br>
-              <label for="date">Date</label><br>
-              <input type="date" id="date" name="date"><br>
-              <!-- Add more form fields as needed -->
-              <br>
-              <button type="submit">Submit</button>
-          </form>
+
+   <!-- Main modal -->
+ <div id="myModal" class="hidden fixed flex justify-center items-center w-80 md:w-96 bg-blur top-32">
+    <div class=" p-4 w-full max-w-md max-h-full">
+        <div class="relative rounded-lg shadow dark:bg-zinc-800">
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                  Enter Your Information
+                </h3>
+                <button class="close" type="button" class="mt-6 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="authentication-modal">
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" style="stroke: #ffffff;"/>
+                  </svg>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5">
+                <form  action="POST"class="space-y-4">
+                    <div>
+                        <label for="amount" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Payment</label>
+                        <input type="number" name="amount" id="amount" class="outline-none bg-zinc-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required />
+                    </div>
+                    <div>
+                        <label for="date" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date</label>
+                        <input type="date" name="date" id="date" class="outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+                    </div>
+
+                    <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                    
+                </form>
+            </div>
         </div>
-      
-      </div>
+    </div>
+</div> 
+</div>
+
+
 
       <script>
-        // Get the modal
-        var modal = document.getElementById('myModal');
-        
-        // Get the button that opens the modal
-        var btn = document.getElementsByTagName("button")[0];
-        
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-        
-        // When the user clicks the button, open the modal
-        function openModal() {
-          modal.style.display = "block";
-        }
-        
-        // When the user clicks on <span> (x), close the modal
-        function closeModal() {
-          modal.style.display = "none";
-        }
-        
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-          if (event.target == modal) {
-            modal.style.display = "none";
-          }
-        }
-        </script>
+            // Get the modal
+            var modal = document.getElementById("myModal");
+            
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+            
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+            
+            // When the user clicks the button, open the modal 
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+            
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+            
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                modal.style.display = "none";
+                }
+            }
+            </script>
+      </script>
+
 </body>
 </html>
+
+
